@@ -6,6 +6,7 @@
 * powerpoint.py
 * youtube.py
 * keyboard.py
+* iconフォルダ
 
 メインPC側ファイル
 --------
