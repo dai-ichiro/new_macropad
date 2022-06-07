@@ -6,7 +6,7 @@ from PySide6.QtGui import QIcon
 from selectPort import SelectPortWidget
 from youtube import YoutubeWidget
 from powerpoint import PowerpointWidget
-from keyboard import KeyboardWidge
+from keyboard_input import KeyboardWidge
 
 toolbar_items = [
     { 'name': 'Menu', 'icon': './icon/menu.svg', 'widget': QWidget},
