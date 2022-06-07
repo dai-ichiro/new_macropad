@@ -3,25 +3,32 @@ from PySide6.QtCore import Qt, QSize, Slot, QIODevice
 from PySide6.QtWidgets import QApplication, QMainWindow, QToolBar, QWidget, QToolButton, QStatusBar, QStackedWidget
 from PySide6.QtGui import QIcon
 
-from youtube import YoutubeWidge
+from selectPort import SelectPortWidget
+from youtube import YoutubeWidget
 from powerpoint import PowerpointWidget
 from keyboard import KeyboardWidge
 
 toolbar_items = [
     { 'name': 'Menu', 'icon': './icon/menu.svg', 'widget': QWidget},
+    { 'name': 'Connect', 'icon': './icon/activity.svg', 'widget': SelectPortWidget},
     { 'name': 'PowerPoint', 'icon': './icon/powerpoint.svg', 'widget': PowerpointWidget},
-    { 'name': 'YouTube', 'icon': './icon/youtube.svg', 'widget': YoutubeWidge},
+    { 'name': 'YouTube', 'icon': './icon/youtube.svg', 'widget': YoutubeWidget},
     { 'name': 'Keyboard', 'icon': './icon/pen-tool.svg', 'widget': KeyboardWidge}
 ]
 
 class Window(QMainWindow):
+
+    serial = QtSerialPort.QSerialPort()
+
     def __init__(self):
         super().__init__()
         
+        '''
         self.serial = QtSerialPort.QSerialPort(
             'COM5', baudRate=QtSerialPort.QSerialPort.BaudRate.Baud9600)
         self.serial.open(QIODevice.OpenModeFlag.WriteOnly)
-                
+        '''
+
         self.openMenu = False
         self.setFixedSize(QSize(900, 600))
 
@@ -47,13 +54,17 @@ class Window(QMainWindow):
 
         for i, eachwidget in enumerate(self.widgetlist):
             self.stackedWidget.addWidget(eachwidget)
-            if i > 0:
+            if i == 1:
+                eachwidget.select_port.connect(self.openPort)
+            if i > 1:
                 eachwidget.push_button_signal.connect(self.send_serial)
 
         self.statusbar = QStatusBar()
         self.setStatusBar(self.statusbar)
         
         self.setCentralWidget(self.stackedWidget)
+
+        self.stackedWidget.setCurrentIndex(1)
         
     def pushToolButton(self):
 
@@ -77,6 +88,12 @@ class Window(QMainWindow):
     @Slot(int)
     def send_serial(self, x):
         self.serial.write(x.to_bytes(1, 'big'))
+    
+    @Slot(QtSerialPort.QSerialPortInfo)
+    def openPort(self, x):
+        self.serial.setPort(x)
+        self.serial.setBaudRate(QtSerialPort.QSerialPort.Baud9600)
+        self.serial.open(QIODevice.WriteOnly)
         
 if __name__ == "__main__":
     app = QApplication([])
