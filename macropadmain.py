@@ -30,7 +30,7 @@ class Window(QMainWindow):
         '''
 
         self.openMenu = False
-        self.setFixedSize(QSize(900, 600))
+        self.setFixedSize(QSize(900, 540))
 
         self.stackedWidget = QStackedWidget()
 
