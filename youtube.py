@@ -10,7 +10,7 @@ buttons = [
     { 'text': 'フルスクリーン', 'icon': './icon_black/monitor.svg', 'serialNum': 23}
 ]
 
-class YoutubeWidget(QWidget):
+class Widget(QWidget):
 
     push_button_signal = Signal(int)
 

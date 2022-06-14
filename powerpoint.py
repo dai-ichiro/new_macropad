@@ -17,7 +17,7 @@ buttons = [
     { 'text': '上下等間隔', 'icon': './icon_black/equal_v.svg', 'serialNum': 10}
 ]
 
-class PowerpointWidget(QWidget):
+class Widget(QWidget):
 
     push_button_signal = Signal(int)
 

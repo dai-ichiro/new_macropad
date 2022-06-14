@@ -15,7 +15,7 @@ buttons = [
     { 'text': 'GitHub token', 'serialNum': 49}
 ]
 
-class KeyboardWidge(QWidget):
+class Widget(QWidget):
 
     push_button_signal = Signal(int)
 

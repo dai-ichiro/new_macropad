@@ -2,7 +2,7 @@ from PySide6 import QtSerialPort
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QMainWindow, QWidget, QLabel, QComboBox, QPushButton, QVBoxLayout
 
-class SelectPortWidget(QMainWindow):
+class Widget(QMainWindow):
 
     select_port = Signal(QtSerialPort.QSerialPortInfo)
 

@@ -1,20 +1,17 @@
+'''
+This file does not need to be modified.
+'''
+
 from PySide6 import QtSerialPort
 from PySide6.QtCore import Qt, QSize, Slot, QIODevice
 from PySide6.QtWidgets import QApplication, QMainWindow, QToolBar, QWidget, QToolButton, QStatusBar, QStackedWidget
 from PySide6.QtGui import QIcon
 
-from selectPort import SelectPortWidget
-from youtube import YoutubeWidget
-from powerpoint import PowerpointWidget
-from keyboard_input import KeyboardWidge
+from importlib import import_module
+import yaml
 
-toolbar_items = [
-    { 'name': 'Menu', 'icon': './icon/menu.svg', 'widget': QWidget},
-    { 'name': 'Connect', 'icon': './icon/activity.svg', 'widget': SelectPortWidget},
-    { 'name': 'PowerPoint', 'icon': './icon/powerpoint.svg', 'widget': PowerpointWidget},
-    { 'name': 'YouTube', 'icon': './icon/youtube.svg', 'widget': YoutubeWidget},
-    { 'name': 'Keyboard', 'icon': './icon/pen-tool.svg', 'widget': KeyboardWidge}
-]
+with open('forms.yml', 'r') as f:
+    toolbar_items = yaml.load(f, Loader=yaml.SafeLoader)
 
 class Window(QMainWindow):
 
@@ -22,12 +19,6 @@ class Window(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        
-        '''
-        self.serial = QtSerialPort.QSerialPort(
-            'COM5', baudRate=QtSerialPort.QSerialPort.BaudRate.Baud9600)
-        self.serial.open(QIODevice.OpenModeFlag.WriteOnly)
-        '''
 
         self.openMenu = False
         self.setFixedSize(QSize(900, 540))
@@ -50,7 +41,12 @@ class Window(QMainWindow):
             self.toolbuttons[-1].setStyleSheet("QToolButton {color: white; font: 16px; font-weight: bold}")
             self.toolbuttons[-1].clicked.connect(self.pushToolButton)
             self.toolbar.addWidget(self.toolbuttons[-1])
-            self.widgetlist.append(each_item.get('widget')())
+            match i:
+                case 0:
+                    self.widgetlist.append(QWidget())
+                case _:
+                    script_path = each_item.get('widget')
+                    self.widgetlist.append(getattr(import_module(script_path), 'Widget')())
 
         for i, eachwidget in enumerate(self.widgetlist):
             self.stackedWidget.addWidget(eachwidget)
