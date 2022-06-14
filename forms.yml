@@ -12,3 +12,12 @@
 - name: Keyboard
   icon: ./icon/pen-tool.svg
   widget: keyboard_input
+- name: OBS Studio
+  icon: ./icon/film.svg
+  widget: obs
+- name: VideoPlayer
+  icon: ./icon/video.svg
+  widget: videoplayer
+- name: PythonScript
+  icon: ./icon/box.svg
+  widget: pythonscript

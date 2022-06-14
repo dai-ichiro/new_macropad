@@ -13,12 +13,15 @@ class Widget(QMainWindow):
     def initUI(self):
         
         self.connectLabel = QLabel()
+        self.connectLabel.setStyleSheet('font: 24px; font-weight: bold')
         self.connectLabel.setAlignment(Qt.AlignCenter)
 
         self.connectBtn = QPushButton('connect')
+        self.connectBtn.setStyleSheet('font: 24px; font-weight: bold')
         self.connectBtn.clicked.connect(self.selectBtn)
 
         self.port_selector = QComboBox()
+        self.port_selector.setStyleSheet('font: 24px; font-weight: bold')
         self.port_list = QtSerialPort.QSerialPortInfo.availablePorts()
         for each_port in self.port_list:
             self.port_selector.addItem(f'{each_port.portName()}: {each_port.description()}')
