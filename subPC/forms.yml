@@ -19,5 +19,5 @@
   icon: ./icon/video.svg
   widget: videoplayer
 - name: PythonScript
-  icon: ./icon/box.svg
+  icon: ./icon/py.svg
   widget: pythonscript
