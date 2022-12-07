@@ -21,7 +21,7 @@ class Window(QMainWindow):
         super().__init__()
 
         self.openMenu = False
-        self.setFixedSize(QSize(900, 540))
+        self.setFixedSize(QSize(540, 540))
 
         self.stackedWidget = QStackedWidget()
 
@@ -35,16 +35,17 @@ class Window(QMainWindow):
         self.widgetlist = []
         for i, each_item in enumerate(toolbar_items):
             self.toolbuttons.append(QToolButton())
-            self.toolbuttons[-1].setText(each_item.get('name'))
-            self.toolbuttons[-1].setIcon(QIcon(each_item.get('icon')))
+            self.toolbuttons[-1].setText(each_item.get('name'))            
             self.toolbuttons[-1].Name = i
             self.toolbuttons[-1].setStyleSheet("QToolButton {color: white; font: 16px; font-weight: bold}")
             self.toolbuttons[-1].clicked.connect(self.pushToolButton)
             self.toolbar.addWidget(self.toolbuttons[-1])
             match i:
                 case 0:
+                    self.toolbuttons[-1].setIcon(QIcon('./icon/menu.svg'))
                     self.widgetlist.append(QWidget())
                 case _:
+                    self.toolbuttons[-1].setIcon(QIcon('./icon/more-horizontal.svg'))
                     script_path = each_item.get('widget')
                     self.widgetlist.append(getattr(import_module(script_path), 'Widget')())
 
