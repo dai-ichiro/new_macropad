@@ -1,0 +1,23 @@
+- name: Menu
+  icon: ./icon/menu.svg
+- name: Connect
+  icon: ./icon/activity.svg
+  widget: selectPort
+- name: PowerPoint
+  icon: ./icon/powerpoint.svg
+  widget: powerpoint
+- name: YouTube
+  icon: ./icon/youtube.svg
+  widget: youtube
+- name: Keyboard
+  icon: ./icon/pen-tool.svg
+  widget: keyboard_input
+- name: OBS Studio
+  icon: ./icon/film.svg
+  widget: obs
+- name: VideoPlayer
+  icon: ./icon/video.svg
+  widget: videoplayer
+- name: PythonScript
+  icon: ./icon/py.svg
+  widget: pythonscript
