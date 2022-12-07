@@ -1,15 +1,15 @@
 - name: Menu
 - name: Connect
   widget: selectPort
-- name: PowerPoint
-  widget: powerpoint
-- name: YouTube
-  widget: youtube
-- name: Keyboard
+- name: PowerPoint 1      # 0-7
+  widget: powerpoint_1
+- name: PowerPoint 2      # 10-17
+  widget: powerpoint_2
+- name: Keyboard          # 20-27
   widget: keyboard_input
-- name: OBS Studio
-  widget: obs
-- name: VideoPlayer
-  widget: videoplayer
-- name: PythonScript
+- name: PythonScript      # 30-37
   widget: pythonscript
+- name: Undefined 1       # 40-47
+  widget: undefined_1
+- name: Undefined 2       # 50-57
+  widget: undefined_2
