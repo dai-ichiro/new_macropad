@@ -3,8 +3,8 @@ from PySide6.QtWidgets import QGridLayout, QSizePolicy, QPushButton, QWidget
 from functools import partial
 
 buttons = [
-    { 'text': 'pyside6', 'serialNum': 100},
-    { 'text': 'opencv（動画）', 'serialNum': 101},
+    { 'text': 'pyside6', 'serialNum': 30},
+    { 'text': 'opencv（動画）', 'serialNum': 31},
 ]
 
 class Widget(QWidget):
