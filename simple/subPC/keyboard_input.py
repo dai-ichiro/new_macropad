@@ -10,6 +10,7 @@ buttons = [
     { 'text': '</br></br>', 'serialNum': 24},
     { 'text': 'python -m pip install --upgrade pip', 'serialNum': 25},
     { 'text': '--cache-dir python_cache', 'serialNum': 26},
+    { 'text': 'explorer.exe .', 'serialNum': 27}
 ]
 
 class Widget(QWidget):
@@ -31,8 +32,9 @@ class Widget(QWidget):
 
         layout = QGridLayout()
         for i in range(8):
-            layout.addWidget(self.button_list[i], i % 6, i / 6)
+            layout.addWidget(self.button_list[i], i / 2, i % 2)
         self.setLayout(layout)
     
     def button_push(self, x: int) -> None:
-        self.push_button_signal.emit(x)
+        if x < 256:
+            self.push_button_signal.emit(x)

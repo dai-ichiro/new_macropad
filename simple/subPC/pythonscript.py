@@ -26,8 +26,9 @@ class Widget(QWidget):
 
         layout = QGridLayout()
         for i in range(8):
-            layout.addWidget(self.button_list[i], i % 6, 0)
+            layout.addWidget(self.button_list[i], i / 2, i % 2)
         self.setLayout(layout)
     
     def button_push(self, x: int) -> None:
-        self.push_button_signal.emit(x)
+        if x < 256:
+            self.push_button_signal.emit(x)
