@@ -3,29 +3,31 @@ import pyperclip
 
 def action_do(x: int) -> None:
     match x:
-        #PowerPoint settings
+        #PowerPoint settings 1
         case 0:
-            kb.send('alt, n, x, h')
+            kb.send('alt, n, x, h') # テキスト挿入
         case 1:
-            kb.send('alt, n, p, d')
+            kb.send('alt, n, p, d') # 画像挿入
         case 2:
-            kb.send('alt, n, s, h')
-        case 3:
-            kb.send('alt, h, g, a, t')
-        case 4:
-            kb.send('alt, h, g, a, l')
-        case 5:
-            kb.send('alt, h, g, a, r')
-        case 6:
-            kb.send('alt, h, g, a, b')
-        case 7:
-            kb.send('alt, h, g, a, c')
-        case 8:
-            kb.send('alt, h, g, a, m')
-        case 9:
-            kb.send('alt, h, g, a, h')
+            kb.send('alt, n, s, h') # 図形挿入
+
+        #PowerPoint settings 2
         case 10:
-            kb.send('alt, h, g, a, v')
+            kb.send('alt, h, g, a, t')  # 上揃え
+        case 11:
+            kb.send('alt, h, g, a, b')  # 下揃え
+        case 12:
+            kb.send('alt, h, g, a, l')  # 左揃え
+        case 13:
+            kb.send('alt, h, g, a, r')  # 右揃え
+        case 14:
+            kb.send('alt, h, g, a, c')  # 左右中央揃え
+        case 15:
+            kb.send('alt, h, g, a, h')  # 左右等間隔
+        case 16:
+            kb.send('alt, h, g, a, m')  # 上下中央揃え
+        case 17:
+            kb.send('alt, h, g, a, v')  # 上下等間隔
 
         #Keyboard settings
         case 20:
