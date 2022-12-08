@@ -7,10 +7,10 @@ buttons = [
     { 'text': '下揃え', 'serialNum': 11},
     { 'text': '左揃え', 'serialNum': 12},
     { 'text': '右揃え', 'serialNum': 13},
-    { 'text': '左右中央揃え', 'icon': './icon_black/centeralignment_v.svg', 'serialNum': 14},
-    { 'text': '左右等間隔', 'icon': './icon_black/equal_h.svg', 'serialNum': 15},
-    { 'text': '上下中央揃え', 'icon': './icon_black/centeralignment_h.svg', 'serialNum': 16},
-    { 'text': '上下等間隔', 'icon': './icon_black/equal_v.svg', 'serialNum': 17}
+    { 'text': '左右中央揃え', 'serialNum': 14},
+    { 'text': '左右等間隔', 'serialNum': 15},
+    { 'text': '上下中央揃え', 'serialNum': 16},
+    { 'text': '上下等間隔', 'serialNum': 17}
 ]
 
 class Widget(QWidget):

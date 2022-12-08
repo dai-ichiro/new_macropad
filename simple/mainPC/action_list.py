@@ -27,80 +27,29 @@ def action_do(x: int) -> None:
         case 10:
             kb.send('alt, h, g, a, v')
 
-        #YouTube Settings
-        case 20:
-            kb.send('j')
-        case 21:
-            kb.send('l')
-        case 22:
-            kb.send('k')
-        case 23:
-            kb.send('f')
-
         #Keyboard settings
-        case 40:
+        case 20:
             kb.write('<h2></h2>')
             kb.send('left, left, left, left, left')
-        case 41:
+        case 21:
             kb.write('<h3></h3>')
             kb.send('left, left, left, left, left')
-        case 42:
+        case 22:
             kb.write('<h4></h4>')
             kb.send('left, left, left, left, left')
-        case 43:
+        case 23:
             kb.write('</br>')
-        case 44:
+        case 24:
             kb.write('</br></br>')
-        case 45:
-            kb.write('<a href=""></a>')
-            kb.send('left, left, left, left, left, left')
-        case 46:
+        case 25:
             kb.write('python -m pip install --upgrade pip')
-        case 47:
+        case 26:
             kb.write('--cache-dir python_cache')
-        case 48:
-            kb.write('pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113')
-        case 49:
-            kb.write('ghp_m8h0rdy6gfu8hfwge06C8EV9iy')
-        
-        #video player
-        case 60:
-            kb.send('left')
-        case 61:
-            kb.send('right')
-        case 62:
-            kb.send('num lock, shift+left, num lock')
-        case 63:
-            kb.send('num lock, shift+right, num lock')
-        case 64:
-            kb.send('ctrl+p')
-        case 65:
-            kb.send('ctrl+n')
-        case 66:
-            kb.send(',')
-        case 67:
-            kb.send('.')
-        case 68:
-            kb.send('shift+l')
-        case 70:
-            kb.send('k')
-        case 71:
-            kb.send('f')
-        case 72:
-            kb.send('down')
-        case 73:
-            kb.send('up')
-        
-        #OBS
-        case 80:
-            kb.send('ctrl+1')
-        case 81:
-            kb.send('ctrl+f')
-        case 82:
-            kb.send('ctrl+2')
+        case 27:
+            kb.write('explorer.exe .')
         
         #PythonScript
-        case 100:
+        case 30:
             script = '''from PySide6.QtCore import Qt, Signal, Slot, QThread, QSize
 from PySide6.QtWidgets import QMainWindow, QApplication, QWidget, QLabel, QSlider, QPushButton, QGridLayout, QHBoxLayout, QVBoxLayout 
 from PySide6.QtGui import QImage, QPixmap
@@ -122,7 +71,7 @@ if __name__ == "__main__":
             pyperclip.copy(script)
             kb.send('ctrl+v')
         
-        case 101:
+        case 31:
             script = '''import cv2
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)

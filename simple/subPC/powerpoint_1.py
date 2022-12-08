@@ -3,9 +3,9 @@ from PySide6.QtWidgets import QPushButton, QGridLayout, QWidget, QSizePolicy
 from functools import partial
 
 buttons = [
-    { 'text': 'テキスト挿入', 'icon': './icon_black/edit.svg', 'serialNum': 0},
-    { 'text': '画像挿入', 'icon': './icon_black/image.svg', 'serialNum': 1},
-    { 'text': '図形挿入', 'icon': './icon_black/insertfig.svg', 'serialNum': 2},
+    { 'text': 'テキスト挿入', 'serialNum': 0},
+    { 'text': '画像挿入', 'serialNum': 1},
+    { 'text': '図形挿入', 'serialNum': 2},
 ]
 
 class Widget(QWidget):
