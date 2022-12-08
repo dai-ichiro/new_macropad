@@ -15,7 +15,7 @@ class Widget(QWidget):
         super().__init__()
 
         self.button_list = []
-        for i in range(6):
+        for i in range(8):
             self.button_list.append(QPushButton())
             self.button_list[-1].setStyleSheet('font: 20px; font-weight: bold;')
             self.button_list[-1].setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
@@ -25,7 +25,7 @@ class Widget(QWidget):
             self.button_list[i].clicked.connect(partial(self.button_push, each_button.get('serialNum')))    
 
         layout = QGridLayout()
-        for i in range(6):
+        for i in range(8):
             layout.addWidget(self.button_list[i], i % 6, 0)
         self.setLayout(layout)
     
