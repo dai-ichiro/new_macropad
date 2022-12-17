@@ -10,6 +10,8 @@ def action_do(x: int) -> None:
             kb.send('alt, n, p, d') # 画像挿入
         case 2:
             kb.send('alt, n, s, h') # 図形挿入
+        case 3:
+            kb.send('alt, j, p, e, 2, d') # 画像の変更
 
         #PowerPoint settings 2
         case 10:
