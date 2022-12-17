@@ -6,6 +6,7 @@ buttons = [
     { 'text': 'テキスト挿入', 'serialNum': 0},
     { 'text': '画像挿入', 'serialNum': 1},
     { 'text': '図形挿入', 'serialNum': 2},
+    { 'text': '画像の変更', 'serialNum': 3},
 ]
 
 class Widget(QWidget):
